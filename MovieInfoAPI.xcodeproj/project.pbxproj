@@ -17,6 +17,9 @@
 		D2A8801829F0F7C100E2481D /* MovieInfoAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A8801729F0F7C100E2481D /* MovieInfoAPITests.swift */; };
 		D2A8802229F0F7C100E2481D /* MovieInfoAPIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A8802129F0F7C100E2481D /* MovieInfoAPIUITests.swift */; };
 		D2A8802429F0F7C100E2481D /* MovieInfoAPIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A8802329F0F7C100E2481D /* MovieInfoAPIUITestsLaunchTests.swift */; };
+		D2A8803229F1033A00E2481D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D2A8803129F1033A00E2481D /* Alamofire */; };
+		D2A8803429F107EF00E2481D /* BoxOfficeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A8803329F107EF00E2481D /* BoxOfficeResult.swift */; };
+		D2A8803629F199B600E2481D /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A8803529F199B600E2481D /* Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 		D2A8801D29F0F7C100E2481D /* MovieInfoAPIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieInfoAPIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A8802129F0F7C100E2481D /* MovieInfoAPIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoAPIUITests.swift; sourceTree = "<group>"; };
 		D2A8802329F0F7C100E2481D /* MovieInfoAPIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoAPIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2A8803329F107EF00E2481D /* BoxOfficeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeResult.swift; sourceTree = "<group>"; };
+		D2A8803529F199B600E2481D /* Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A8803229F1033A00E2481D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +109,9 @@
 			children = (
 				D2A87FFD29F0F7BF00E2481D /* AppDelegate.swift */,
 				D2A87FFF29F0F7BF00E2481D /* SceneDelegate.swift */,
+				D2A8803529F199B600E2481D /* Ext.swift */,
 				D2A8800129F0F7BF00E2481D /* ViewController.swift */,
+				D2A8803329F107EF00E2481D /* BoxOfficeResult.swift */,
 				D2A8800329F0F7BF00E2481D /* Main.storyboard */,
 				D2A8800929F0F7C100E2481D /* Assets.xcassets */,
 				D2A8800B29F0F7C100E2481D /* LaunchScreen.storyboard */,
@@ -146,6 +154,9 @@
 			dependencies = (
 			);
 			name = MovieInfoAPI;
+			packageProductDependencies = (
+				D2A8803129F1033A00E2481D /* Alamofire */,
+			);
 			productName = MovieInfoAPI;
 			productReference = D2A87FFA29F0F7BF00E2481D /* MovieInfoAPI.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +229,9 @@
 				Base,
 			);
 			mainGroup = D2A87FF129F0F7BF00E2481D;
+			packageReferences = (
+				D2A8803029F1033A00E2481D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D2A87FFB29F0F7BF00E2481D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,10 +275,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A8803429F107EF00E2481D /* BoxOfficeResult.swift in Sources */,
 				D2A8800229F0F7BF00E2481D /* ViewController.swift in Sources */,
 				D2A87FFE29F0F7BF00E2481D /* AppDelegate.swift in Sources */,
 				D2A8800029F0F7BF00E2481D /* SceneDelegate.swift in Sources */,
 				D2A8800829F0F7BF00E2481D /* MovieInfoAPI.xcdatamodeld in Sources */,
+				D2A8803629F199B600E2481D /* Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +465,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,6 +494,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +624,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D2A8803029F1033A00E2481D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D2A8803129F1033A00E2481D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2A8803029F1033A00E2481D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D2A8800629F0F7BF00E2481D /* MovieInfoAPI.xcdatamodeld */ = {
