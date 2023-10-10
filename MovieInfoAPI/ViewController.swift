@@ -7,8 +7,20 @@
 
 import UIKit
 import Alamofire
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
+    
+    let tableView: UITableView = {
+        var tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
+    
+    let dataSource = Observable.of((1...30).map(String.init))
+    let bag = DisposeBag()
     
     let dayButton: UIButton = {
         var button = UIButton()
@@ -23,12 +35,45 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview(dayButton)
+//        self.view.addSubview(dayButton)
+//
+//        NSLayoutConstraint.activate([
+//            self.dayButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            self.dayButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+//        ])
+        
+        testRx()
+    }
+    
+    func testRx() {
+        print("testRx() called")
+        self.view.addSubview(tableView)
+        
+        tableView.backgroundColor = .red
+        
+        self.tableView.register(TestTableViewCell.self, forCellReuseIdentifier: "TestTableViewCell")
         
         NSLayoutConstraint.activate([
-            self.dayButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.dayButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
+        
+//        dataSource.bind(to: tableView.rx.items(cellIdentifier: "TestTableViewCell", cellType: TestTableViewCell.self)) { (index, element, cell) in
+//            cell.textLabel?.text = element
+//        }.disposed(by: bag)
+        
+        dataSource.bind(to: tableView.rx.items) { (tableView, index, element) -> UITableViewCell in
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TestTableViewCell") else {
+                print("cell nil")
+                return UITableViewCell()
+            }
+            print("element = \(element)")
+            cell.textLabel?.text = element
+
+            return cell
+        }.disposed(by: bag)
     }
     
     

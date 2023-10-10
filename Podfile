@@ -7,6 +7,9 @@ target 'MovieInfoAPI' do
 
   # Pods for MovieInfoAPI
 
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
   target 'MovieInfoAPITests' do
     inherit! :search_paths
     # Pods for testing
